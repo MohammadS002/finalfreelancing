@@ -1,0 +1,73 @@
+﻿@model FreelanceViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--  Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Freelancers</h5>
+            <h1>Our Popular Freelancers</h1>
+        </div>
+        <div class="row">
+            @foreach(var item in Model.Freelancers)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img src="@Html.DisplayFor(modelItem => item.Pic)" height="350" width="350" />
+                        <div class="bg-secondary p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>@item.Name</small>
+                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>@item.Exp months</small>
+                            </div>
+                            <a class="h5" href="">@item.Career</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>@item.Rating <small></small></h6>
+                                    <h5 class="m-0">@item.Email</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+          
+            
+        </div>
+    </div>
+</div>
+<!--  End -->
+<!-- Team Start -->
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">....</h5>
+            <h1>Meet Our best freelancers</h1>
+        </div>
+        <div class="row">
+            @foreach(var item in Model.Topfreelancers)
+            {
+            <div class="col-md-6 col-lg-3 text-center team mb-4">
+                <div class="team-item rounded overflow-hidden mb-2">
+                    <div class="team-img position-relative">
+                            <img src="@Html.DisplayFor(modelItem => item.Pic)" height="200" width="200" />
+                        <div class="team-social">
+                            <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-secondary p-4">
+                        <h5>@item.Name</h5>
+                        <p class="m-0">@item.Career</p>
+                    </div>
+                </div>
+            </div>    
+            }
+            
+
+        </div>
+    </div>
+</div>
+<!-- Team End -->
